@@ -1,21 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
-// Find the brand block in the header
-var brand = document.querySelector('header .brand');
-if (!brand) return;
+  var brand = document.querySelector('header .brand');
+  if (!brand) return;
 
-// If it is already a link (home page), ensure it points to index.html
-if (brand.tagName.toLowerCase() === 'a') {
-brand.setAttribute('href', 'index.html');
-return;
-}
+  // If already an anchor on home, normalize its href
+  if (brand.tagName.toLowerCase() === 'a') {
+    if (!brand.getAttribute('href')) brand.setAttribute('href', 'index.html');
+    if (brand.getAttribute('href') !== 'index.html') brand.setAttribute('href', 'index.html');
+    brand.setAttribute('aria-label', 'Go to home');
+    brand.style.cursor = 'pointer';
+    return;
+  }
 
-// If it is a div, make clicks go home
-brand.addEventListener('click', function () {
-var home = new URL('index.html', window.location.href);
-window.location.href = home.href;
+  // If it is a div, replace it with an anchor, keep the same class and children
+  var link = document.createElement('a');
+  link.className = brand.className;          // preserves "brand" styling
+  link.href = 'index.html';
+  link.setAttribute('aria-label', 'Go to home');
+  link.style.cursor = 'pointer';
+
+  // Move all children across
+  while (brand.firstChild) {
+    link.appendChild(brand.firstChild);
+  }
+
+  // Replace in the DOM
+  brand.parentNode.replaceChild(link, brand);
 });
-});
-
-Add this one line to each page, before the closing body tag:
-
-<script src="main.js" defer></script>
