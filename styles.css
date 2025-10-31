@@ -32,10 +32,10 @@ header {
   color: var(--text);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  position: sticky; /* New: Makes header sticky */
-  top: 0; /* New: Sticks to top of viewport */
-  z-index: 100; /* New: Ensures header stays above other content */
-  width: 100%; /* New: Ensures full width */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
 .top {
   display: flex;
@@ -84,40 +84,26 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* === GLOBAL HERO SECTION (APPLIES TO ALL PAGES) === */
+/* === UNIVERSAL HERO SECTION (EXACT HOME PAGE STYLING) === */
 .hero {
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: white;
-  position: relative;
-  overflow: hidden;
-  margin-top: 0; /* Ensures no gap between header and hero */
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1605559424843-9e4d3ef1d640?q=80&w=1600&auto=format&fit=crop');
+  background: linear-gradient(0deg, rgba(7,11,25,.70), rgba(7,11,25,.70)),
+              url('https://images.unsplash.com/photo-1605559424843-9e4d3ef1d640?q=80&w=1600&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
-  opacity: 0.2;
-  z-index: 0;
+  color: #fff;
+  margin-top: 0;
 }
 .hero .wrap {
-  padding: 80px 0;
-  position: relative;
-  z-index: 1;
+  padding: 60px 0;
 }
 .hero h1 {
-  margin: 0 0 16px;
-  font-size: 42px;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 0 8px;
+  font-size: 36px;
+  color: #fff;
 }
 .hero p {
-  margin: 0 0 24px;
-  color: rgba(255,255,255,0.9);
-  font-size: 1.1rem;
-  max-width: 70%;
+  margin: 0 0 16px;
+  color: #cfd8e3;
 }
 
 /* === BUTTONS === */
@@ -147,7 +133,7 @@ nav a:hover {
 /* === SECTIONS & GRID === */
 .section { 
   padding: 40px 0; 
-  scroll-margin-top: 80px; /* New: Compensates for sticky header when jumping to sections */
+  scroll-margin-top: 80px;
 }
 h2 {
   font-size: 32px;
