@@ -58,6 +58,11 @@ header {
   background: var(--brand);
   padding: 5px;
 }
+
+header .brand {
+  cursor: pointer;
+}
+
 .brand .name {
   font-weight: 800;
   letter-spacing: 0.3px;
