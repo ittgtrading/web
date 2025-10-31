@@ -10,7 +10,8 @@
   --border: #e2e8f0;
   --accent: #f0abfc;
   --highlight: #fef3c7;
-  --hero-gradient: linear-gradient(135deg, var(--brand), var(--brand-2));
+  --hero-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --hero-image: url('https://images.unsplash.com/photo-1605559424843-9e4d3ef1d640?q=80&w=1600&auto=format&fit=crop');
 }
 
 /* === RESET & BASE === */
@@ -84,9 +85,10 @@ nav a:hover {
 /* === HERO SECTION (UNIVERSAL) === */
 .hero {
   background: var(--hero-gradient);
-  color: white;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   position: relative;
-  overflow: hidden;
 }
 .hero::before {
   content: "";
@@ -95,28 +97,26 @@ nav a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('https://images.unsplash.com/photo-1605559424843-9e4d3ef1d640?q=80&w=1600&auto=format&fit=crop');
+  background: var(--hero-image);
   background-size: cover;
   background-position: center;
   opacity: 0.3;
   z-index: 0;
 }
 .hero .wrap { 
-  padding: 80px 0; 
+  padding: 60px 0; 
   position: relative;
   z-index: 1;
 }
 .hero h1 { 
-  margin: 0 0 16px; 
-  font-size: 42px; 
-  color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin: 0 0 8px; 
+  font-size: 36px; 
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .hero p { 
-  margin: 0 0 24px; 
+  margin: 0 0 16px; 
   color: rgba(255,255,255,0.95);
-  font-size: 1.1rem;
-  max-width: 70%;
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
