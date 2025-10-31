@@ -1,16 +1,16 @@
 /* === THEME COLORS === */
 :root {
-  --bg: #f8fafc;
-  --brand: #3b82f6;
-  --brand-2: #8b5cf6;
-  --text: #1e293b;
-  --muted: #64748b;
-  --surface: #ffffff;
-  --light: #f1f5f9;
-  --border: #e2e8f0;
-  --accent: #f0abfc;
-  --highlight: #fef3c7;
-  --hero-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --bg: #0a1020;          /* Deep navy background */
+  --brand: #3b82f6;       /* Keep brand blue for buttons & highlights */
+  --brand-2: #8b5cf6;     /* Keep secondary purple for accents */
+  --text: #e2e8f0;        /* Light text for dark background */
+  --muted: #94a3b8;       /* Muted gray-blue for secondary text */
+  --surface: #111827;     /* Slightly lighter navy for cards and sections */
+  --light: #1e293b;       /* Soft navy used in footer/blocks */
+  --border: #334155;      /* Subtle border tone for dark mode */
+  --accent: #f0abfc;      /* Keep pink accent for badges */
+  --highlight: #1e3a8a;   /* Deep navy highlight */
+  --hero-gradient: linear-gradient(135deg, #1e3a8a, #312e81); /* Navy gradient hero */
 }
 
 /* === RESET & BASE === */
@@ -20,7 +20,7 @@ html, body {
   padding: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
   color: var(--text);
-  background: var(--surface);
+  background: var(--bg);
 }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: var(--brand); }
@@ -29,10 +29,10 @@ a:hover { text-decoration: underline; }
 
 /* === HEADER & NAVIGATION === */
 header {
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -63,12 +63,10 @@ header {
 header .brand img {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-
 header .brand:hover img {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
   transform: scale(1.05);
 }
-
 header .brand {
   cursor: pointer;
 }
@@ -100,7 +98,7 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* === UNIVERSAL HERO SECTION (BLUE GRADIENT) === */
+/* === UNIVERSAL HERO SECTION (NAVY GRADIENT) === */
 .hero {
   background: var(--hero-gradient);
   color: white;
@@ -111,7 +109,7 @@ nav a:hover {
   margin: 0 0 16px;
   font-size: 42px;
   color: white;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .hero p {
   margin: 0 0 24px;
@@ -179,11 +177,11 @@ h2::after {
   border-radius: 16px;
   padding: 24px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 .card h3 {
   margin: 0 0 12px;
@@ -201,12 +199,12 @@ h2::after {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover img {
   transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* === SERVICE CARDS (LAYOUT) === */
@@ -265,7 +263,7 @@ h2::after {
   background: var(--surface);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 .table th {
   background: var(--brand);
@@ -295,12 +293,13 @@ input, textarea {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
+  color: var(--text);
   transition: all 0.3s ease;
 }
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 label {
   font-weight: 600;
