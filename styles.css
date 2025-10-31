@@ -59,6 +59,16 @@ header {
   padding: 5px;
 }
 
+/* Logo glow on hover */
+header .brand img {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+header .brand:hover img {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  transform: scale(1.05);
+}
+
 header .brand {
   cursor: pointer;
 }
