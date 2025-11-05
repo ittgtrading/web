@@ -77,15 +77,34 @@
   </section>
 
   <section class="section">
-    <h2>Quick message</h2>
-    <p>This form opens your email program. For urgent requests, phone works best.</p>
-    <form action="mailto:info@ittgtrading.co.za" method="post" enctype="text/plain">
-      <label>Name<input type="text" name="name" required></label>
-      <label>Email<input type="email" name="email" required></label>
-      <label>Message<textarea rows="5" name="message" required></textarea></label>
-      <button class="btn" type="submit">Send</button>
-    </form>
-  </section>
+  <h2>Quick message</h2>
+  <p>We reply within one business day.</p>
+
+  <form action="https://formsubmit.co/info@ittgtrading.co.za" method="POST">
+    <!-- Anti-spam -->
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="false">
+    <!-- After submit redirect -->
+    <input type="hidden" name="_next" value="https://ittgtrading.github.io/web/thanks.html">
+    <!-- Email subject -->
+    <input type="hidden" name="_subject" value="Website enquiry from ITTG">
+
+    <label>Name
+      <input type="text" name="name" required>
+    </label>
+
+    <label>Email
+      <input type="email" name="email" required>
+    </label>
+
+    <label>Message
+      <textarea rows="5" name="message" required></textarea>
+    </label>
+
+    <button class="btn" type="submit">Send</button>
+  </form>
+</section>
+
 </main>
   
 <footer>
